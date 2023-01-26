@@ -15,7 +15,7 @@ class IndexController extends Controller
             ],
             [
                 "id" => 2,
-                "username" = > "Denis"
+                "username" => "Denis"
             ],
         ];
         $user = [

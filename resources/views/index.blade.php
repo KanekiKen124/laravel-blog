@@ -10,7 +10,7 @@
     <h1>Hello, {{ $user['username'] }} !</h1>
     <ul>
         @foreach($users as $user)
-            @if($user -> id% 2 == 0)
+            @if($user['id'] % 2 == 0)
                 <li>Пользователь с четным ID.{{ $user['username'] }}</li>
             @else
                 <li>Пользователь с нечетным ID. {{ $user['username'] }}</li>
