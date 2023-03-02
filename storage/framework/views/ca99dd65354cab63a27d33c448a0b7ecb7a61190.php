@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Post Page'); ?>
 
 <?php $__env->startSection('post'); ?>
@@ -54,39 +52,31 @@
                   <div class="col-lg-12">
                     <div class="blog-post">
                       <div class="blog-thumb">
-                        <img src="assets/images/blog-post-02.jpg" alt="">
+                        <img src="/assets/images/blog-post-01.jpg" alt="">
                       </div>
                       <div class="down-content">
-                        <span>Lifestyle</span>
-                        <a href="post-details.html"><h4>Aenean pulvinar gravida sem nec</h4></a>
+                        <span><?php echo e($article->theme); ?></span>
+                        <a href="<?php echo e(route('article.show', $article->slug)); ?>"><h4><?php echo e($article->title); ?></h4></a>
                         <ul class="post-info">
-                          <li><a href="#">Admin</a></li>
-                          <li><a href="#">May 12, 2020</a></li>
-                          <li><a href="#">10 Comments</a></li>
+                          <li><a href="#"><?php echo e($article->author()->username); ?></a></li>
+                          <li><a href="#"><?php echo e($article->created_at->format('M d, Y')); ?></a></li>
+                          <li><a href="#">12 Comments</a></li>
                         </ul>
-                        <p>You can browse different tags such as <a rel="nofollow" href="https://templatemo.com/tag/multi-page" target="_parent">multi-page</a>, <a rel="nofollow" href="https://templatemo.com/tag/resume" target="_parent">resume</a>, <a rel="nofollow" href="https://templatemo.com/tag/video" target="_parent">video</a>, etc. to see more CSS templates. Sed hendrerit rutrum arcu, non malesuada nisi. Sed id facilisis turpis. Donec justo elit, dapibus vel ultricies in, molestie sit amet risus. In nunc augue, rhoncus sed libero et, tincidunt tempor nisl. Donec egestas, quam eu rutrum ultrices, sapien ante posuere nisl, ac eleifend eros orci vel ante. Pellentesque vitae eleifend velit. Etiam blandit felis sollicitudin vestibulum feugiat.
-                        <br><br>Donec tincidunt leo nec magna gravida varius. Suspendisse felis orci, egestas ac sodales quis, venenatis et neque. Vivamus facilisis dignissim arcu et blandit. Maecenas finibus dui non pulvinar lacinia. Ut lacinia finibus lorem vel porttitor. Suspendisse et metus nec libero ultrices varius eget in risus. Cras id nibh at erat pulvinar malesuada et non ipsum. Suspendisse id ipsum leo.</p>
+                        <p><?php echo e(mb_substr($article['content'], 0, 120)); ?>...</p>
                         <div class="post-options">
                           <div class="row">
                             <div class="col-6">
                               <ul class="post-tags">
                                 <li><i class="fa fa-tags"></i></li>
-                                <li><a href="#">Best Templates</a>,</li>
-                                <li><a href="#">TemplateMo</a></li>
-                              </ul>
-                            </div>
-                            <div class="col-6">
-                              <ul class="post-share">
-                                <li><i class="fa fa-share-alt"></i></li>
-                                <li><a href="#">Facebook</a>,</li>
-                                <li><a href="#"> Twitter</a></li>
+                                <li><a href="#">Beauty</a>,</li>
+                                <li><a href="#">Nature</a></li>
                               </ul>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div>              
                   <div class="col-lg-12">
                     <div class="sidebar-item comments">
                       <div class="sidebar-heading">
