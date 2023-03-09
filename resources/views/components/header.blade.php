@@ -18,7 +18,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('blog') }}">
+                  <a class="nav-link" href="{{ route('article.all') }}">
                     Blog Entries
                   </a>
                 </li>

@@ -57,12 +57,12 @@
                           <img src="assets/images/blog-thumb-01.jpg" alt="">
                         </div>
                         <div class="down-content">
-                          <span>Lifestyle</span>
-                          <a href="post-details.html"><h4>Donec tincidunt leo</h4></a>
+                          <span><?php echo e($article->theme); ?></span>
+                          <a href="<?php echo e(route('article.show', $article->slug)); ?>"><h4><?php echo e($article->title); ?></h4></a>
                           <ul class="post-info">
-                            <li><a href="#">Admin</a></li>
-                            <li><a href="#">May 31, 2020</a></li>
-                            <li><a href="#">12 Comments</a></li>
+                            <li><a href="#"><?php echo e($article->author()->username); ?></a></li>
+                            <li><a href="#"><?php echo e($article->created_at->format('M d, Y')); ?></a></li>
+                            <li><a href="#"><?php echo e(0); ?>Comments</a></li>
                           </ul>
                           <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
                           <div class="post-options">
@@ -83,7 +83,7 @@
 
                   <div class="col-lg-12">
 
-                      <?php echo e($articles->links()); ?>
+                      <?php echo e($articles->links('components.pagination')); ?>
 
                     
                     

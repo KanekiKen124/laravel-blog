@@ -16,11 +16,17 @@ class Article extends Model
         "likes",
         "slug",
         "user_id",
-        "theme"
+        "theme",
+        
     ];
 
     public function author()
     {
         return $this->hasOne(User::class, 'id', 'user_id')->first();
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

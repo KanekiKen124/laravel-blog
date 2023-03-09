@@ -17,6 +17,9 @@ class AuthController extends Controller
         $user = User::query()->create([
             'password' => Hash::make($request['password'])
         ] + $request->validated());
+        if ($request->file('photo')) {
+            $validated['image_path'] = $request->file('photo')->store('public/images');
+        }
 
         Auth::login($user);
 

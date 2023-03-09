@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comments extends Model
+class Comment extends Model
 {
     use HasFactory;
 
@@ -15,4 +15,8 @@ class Comments extends Model
         "article_id"
     ];
 
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id')->first();
+    }
 }

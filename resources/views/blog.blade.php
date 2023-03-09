@@ -59,12 +59,12 @@
                           <img src="assets/images/blog-thumb-01.jpg" alt="">
                         </div>
                         <div class="down-content">
-                          <span>Lifestyle</span>
-                          <a href="post-details.html"><h4>Donec tincidunt leo</h4></a>
+                          <span>{{ $article->theme }}</span>
+                          <a href="{{ route('article.show', $article->slug) }}"><h4>{{ $article->title }}</h4></a>
                           <ul class="post-info">
-                            <li><a href="#">Admin</a></li>
-                            <li><a href="#">May 31, 2020</a></li>
-                            <li><a href="#">12 Comments</a></li>
+                            <li><a href="#">{{ $article->author()->username }}</a></li>
+                            <li><a href="#">{{ $article->created_at->format('M d, Y') }}</a></li>
+                            <li><a href="#">{{ 0 }}Comments</a></li>
                           </ul>
                           <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
                           <div class="post-options">
@@ -85,7 +85,7 @@
 
                   <div class="col-lg-12">
 
-                      {{ $articles->links() }}
+                      {{ $articles->links('components.pagination') }}
                     
                     {{--<ul class="page-numbers">
                       <li><a href="#">1</a></li>
